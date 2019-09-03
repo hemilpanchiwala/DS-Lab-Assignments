@@ -90,7 +90,6 @@ int makeArray(int row1, int row2, int col1, int col2, int level, int indexValue)
   indexValue = makeArray(pp+1, row2, col1, qq, level+1, indexValue);
   indexValue = makeArray(pp+1, row2, qq+1, col2, level+1, indexValue);
 
-
   return indexValue;
 
 }
@@ -164,6 +163,13 @@ int main(){
       break;
     }
   }
+
+  // for(int i=1;i<=size;i++){
+  //   for(int j=1;j<=size;j++){
+  //     printf("%d ", input[i][j]);
+  //   }
+  //   printf("\n");
+  // }
 
   // Here output array is declared
   output = (int **) malloc((size+1)*sizeof(int *));

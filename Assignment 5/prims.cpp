@@ -8,8 +8,10 @@
  */
 #include <limits.h> 
 #include <stdlib.h> 
+#include <string.h>
 #include <iostream>
 #include <vector>
+#include <time.h>
 #include <fstream>
 #include <sstream>
 
@@ -261,16 +263,33 @@ bool isInMinHeap(struct MinHeap* minHeap, int v)
 void printArr(int node[], int weight[], int n) 
 { 
 
-	for (int i = 1; i < n; ++i){
-        char start = (char) (node[i]+65);
-        char end = (char) (i+65);
-        if(node[i] > i){
-            cout<<end<<" "<<start<<" "<<weight[i]<<endl;
-        }else{
-            cout<<start<<" "<<end<<" "<<weight[i]<<endl;
-        }
-        
-    }
+	cout << "Node1 Node2 Weight"<< endl;
+	FILE *fp;
+
+    if((fp = fopen("graph3.dot", "w")) != NULL){
+        fprintf(fp, "graph G {\n");
+
+
+
+		for (int i = 1; i < n; ++i){
+			char start = (char) (node[i]+65);
+			char end = (char) (i+65);
+
+			if(node[i] > i){
+				cout<<end<<" "<<start<<" "<<weight[i]<<endl;
+			}else{
+				cout<<start<<" "<<end<<" "<<weight[i]<<endl;
+			}
+
+			fprintf(fp, "\t%c -- %c [label=\"%d\"]\n", start, end, weight[i]);
+
+		}
+
+		fprintf(fp, "}\n");
+    	fclose(fp);
+	}else{
+		printf("\nfopen() failed\n");
+	}
 } 
 
 /**
@@ -325,8 +344,13 @@ void PrimMST(struct Graph* graph)
  * 
  * @return int 
  */
-int main() 
-{ 
+int main() { 
+
+	clock_t start, end;
+    double cpu_time_used;
+
+    start = clock();
+
 	int V = 6; 
 	struct Graph* graph = createGraph(V); 
 
@@ -337,6 +361,7 @@ int main()
     getline(fin, line);
 	string max="";
 
+	cout<<"Node1 Node2 Weight"<<endl;
     while (fin) {
         vector<string> words;
         stringstream ss(line); 
@@ -347,6 +372,7 @@ int main()
   		s = words[0]+words[1];
   		max = (max>s)?max:(words[0]>words[1]?words[0]:words[1]);
   		
+		cout<<words[0]<<" "<<words[1]<<" "<<stoi(words[2])<<endl;
 
         int start = (int) words[0][0] - 65;
         int end = (int) words[1][0] - 65;
@@ -358,6 +384,11 @@ int main()
     } 
 
 	PrimMST(graph); 
+
+	end = clock();
+    
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("%f\n", cpu_time_used);
 
 	return 0; 
 } 

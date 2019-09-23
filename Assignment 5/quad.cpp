@@ -8,6 +8,7 @@
  */
 #include <iostream>
 #include <map> 
+#include <time.h>
 using namespace std;
 
 /**
@@ -15,8 +16,13 @@ using namespace std;
  * 
  * @return int 
  */
-int main()
-{
+int main(){
+
+    clock_t start, end;
+    double cpu_time_used;
+
+    start = clock();
+
 	int coeff, pow;
 	int max;
 	map<int,int> eq1, eq2;
@@ -72,6 +78,11 @@ int main()
             cout<<"Enter valid option!!!"<<endl;
         }
     }
+
+    end = clock();
     
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("%f\n", cpu_time_used);
+
 	return 0;
 }

@@ -1,4 +1,4 @@
 <map id="Graph" name="Graph">
-<area shape="rect" id="node2" href="$struct_adj_list.html" title="AdjList" alt="" coords="21,95,83,121"/>
-<area shape="rect" id="node3" href="$struct_adj_list_node.html" title="This keeps the note of destination and weight of particular node. " alt="" coords="5,5,99,32"/>
+<area shape="rect" id="node2" href="$struct_adjacency___list.html" title="Adjacency_List" alt="" coords="25,95,135,121"/>
+<area shape="rect" id="node3" href="$struct_adjacency___list___node.html" title="This keeps the note of destination and weight of particular node. " alt="" coords="5,5,155,32"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key',['key',['../struct_min_heap_node.html#aacc8046de30c0b773e3c8acf04771ce1',1,'MinHeapNode']]]
+  ['key',['key',['../struct_fib___heap___node.html#ad486958e3eea979e5e81552eecc5d915',1,'Fib_Heap_Node']]]
 ];

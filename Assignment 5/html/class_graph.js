@@ -6,5 +6,6 @@ var class_graph =
     [ "kruskal", "class_graph.html#a1de36bcb031663da79fc00f5aa0eaede", null ],
     [ "print", "class_graph.html#a2ecf3dd3c4897aa924da8e5c221a8509", null ],
     [ "union_set", "class_graph.html#ac17601621203f1782504e6c6e3bf612a", null ],
-    [ "array", "class_graph.html#a33138cfe84bb21a940ad2aa9a1a8c9eb", null ]
+    [ "array", "class_graph.html#a9339ed1d0e073dfe0bf43862e317c176", null ],
+    [ "number_of_vertices", "class_graph.html#ac21d0192fdac957faed0f72f6448dac7", null ]
 ];

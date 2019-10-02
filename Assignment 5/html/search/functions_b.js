@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['swapminheapnode',['swapMinHeapNode',['../prims_8cpp.html#a2852f9c7ec9a4cf2e04ba582e8429c0a',1,'prims.cpp']]]
+  ['swap_5ffib_5fheap_5fnodes',['Swap_Fib_Heap_Nodes',['../prims_8cpp.html#af4421202767ed61c9675ecb6417eac55',1,'prims.cpp']]]
 ];

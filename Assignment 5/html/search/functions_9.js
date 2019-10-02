@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['newadjlistnode',['newAdjListNode',['../prims_8cpp.html#a079783f492772cffbff344a09d92efb3',1,'prims.cpp']]],
-  ['newminheapnode',['newMinHeapNode',['../prims_8cpp.html#aafd9cf72b23058035f33143df99d003b',1,'prims.cpp']]]
+  ['new_5fadjacency_5flist_5fnode',['New_Adjacency_List_Node',['../prims_8cpp.html#a1aba9eb0e6e30991cd3c5dbbe5b9e805',1,'prims.cpp']]],
+  ['new_5ffib_5fheap_5fnode',['New_Fib_Heap_Node',['../prims_8cpp.html#ac362b89e3c3fefec5cc81dafd63774e2',1,'prims.cpp']]]
 ];

@@ -81,7 +81,8 @@ $(document).ready(function(){initNavTree('prims_8cpp.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">prims.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -89,83 +90,94 @@ $(document).ready(function(){initNavTree('prims_8cpp.html','');});
 
 <p>This program creates minimum spanning tree using Prim's algorithm using Fibonacci heap data structure.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;limits.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for prims.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="prims_8cpp__incl.png" border="0" usemap="#prims_8cpp" alt=""/></div>
-<map name="prims_8cpp" id="prims_8cpp">
-</map>
 </div>
 </div>
 <p><a href="prims_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_adj_list_node.html">AdjListNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keeps the note of destination and weight of particular node.  <a href="struct_adj_list_node.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_adjacency___list___node.html">Adjacency_List_Node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keeps the note of destination and weight of particular node.  <a href="struct_adjacency___list___node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_adj_list.html">AdjList</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_adjacency___list.html">Adjacency_List</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html">Graph</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is class for <a class="el" href="class_graph.html" title="This is class for Graph. ">Graph</a>.  <a href="class_graph.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_min_heap_node.html">MinHeapNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is node for min heap.  <a href="struct_min_heap_node.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is node for fibonacci heap.  <a href="struct_fib___heap___node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_min_heap.html">MinHeap</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This nodes keeps the parameters for the min heap.  <a href="struct_min_heap.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_fib___heap.html">Fib_Heap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This nodes keeps the parameters for the fibonacci heap.  <a href="struct_fib___heap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a079783f492772cffbff344a09d92efb3"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_adj_list_node.html">AdjListNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a079783f492772cffbff344a09d92efb3">newAdjListNode</a> (int dest, int weight)</td></tr>
-<tr class="memdesc:a079783f492772cffbff344a09d92efb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function creates the edge between two nodes with its weight.  <a href="#a079783f492772cffbff344a09d92efb3">More...</a><br /></td></tr>
-<tr class="separator:a079783f492772cffbff344a09d92efb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e107bae0a555b824266a0f96b9b62c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="class_graph.html">Graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#ad9e107bae0a555b824266a0f96b9b62c">createGraph</a> (int V)</td></tr>
-<tr class="memdesc:ad9e107bae0a555b824266a0f96b9b62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="class_graph.html" title="This is class for Graph. ">Graph</a> object.  <a href="#ad9e107bae0a555b824266a0f96b9b62c">More...</a><br /></td></tr>
-<tr class="separator:ad9e107bae0a555b824266a0f96b9b62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a135dff8b2b3e390242bf38fadc4e5f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a135dff8b2b3e390242bf38fadc4e5f5d">addEdge</a> (struct <a class="el" href="class_graph.html">Graph</a> *graph, int src, int dest, int weight)</td></tr>
-<tr class="memdesc:a135dff8b2b3e390242bf38fadc4e5f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function adds an edge to the graph.  <a href="#a135dff8b2b3e390242bf38fadc4e5f5d">More...</a><br /></td></tr>
-<tr class="separator:a135dff8b2b3e390242bf38fadc4e5f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafd9cf72b23058035f33143df99d003b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#aafd9cf72b23058035f33143df99d003b">newMinHeapNode</a> (int v, int key)</td></tr>
-<tr class="memdesc:aafd9cf72b23058035f33143df99d003b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This node creates the new min heap node.  <a href="#aafd9cf72b23058035f33143df99d003b">More...</a><br /></td></tr>
-<tr class="separator:aafd9cf72b23058035f33143df99d003b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f3aa36c21fb80494508da24d1256fe0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_min_heap.html">MinHeap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a7f3aa36c21fb80494508da24d1256fe0">createMinHeap</a> (int capacity)</td></tr>
-<tr class="separator:a7f3aa36c21fb80494508da24d1256fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2852f9c7ec9a4cf2e04ba582e8429c0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a2852f9c7ec9a4cf2e04ba582e8429c0a">swapMinHeapNode</a> (struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a> **a, struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a> **b)</td></tr>
-<tr class="memdesc:a2852f9c7ec9a4cf2e04ba582e8429c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function swaps the nodes of min heap.  <a href="#a2852f9c7ec9a4cf2e04ba582e8429c0a">More...</a><br /></td></tr>
-<tr class="separator:a2852f9c7ec9a4cf2e04ba582e8429c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6490f3f089082024378334c4559d4fdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a6490f3f089082024378334c4559d4fdc">minHeapify</a> (struct <a class="el" href="struct_min_heap.html">MinHeap</a> *minHeap, int idx)</td></tr>
-<tr class="memdesc:a6490f3f089082024378334c4559d4fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions performs the heapify method.  <a href="#a6490f3f089082024378334c4559d4fdc">More...</a><br /></td></tr>
-<tr class="separator:a6490f3f089082024378334c4559d4fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e0e9980904fe3f65d9c893356af826d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a6e0e9980904fe3f65d9c893356af826d">isEmpty</a> (struct <a class="el" href="struct_min_heap.html">MinHeap</a> *minHeap)</td></tr>
-<tr class="memdesc:a6e0e9980904fe3f65d9c893356af826d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks whether min heap is empty or not.  <a href="#a6e0e9980904fe3f65d9c893356af826d">More...</a><br /></td></tr>
-<tr class="separator:a6e0e9980904fe3f65d9c893356af826d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab223228dadd9ecd2e13db7d52dd83e7d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#ab223228dadd9ecd2e13db7d52dd83e7d">extractMin</a> (struct <a class="el" href="struct_min_heap.html">MinHeap</a> *minHeap)</td></tr>
-<tr class="memdesc:ab223228dadd9ecd2e13db7d52dd83e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function extracts the minimum from the min heap.  <a href="#ab223228dadd9ecd2e13db7d52dd83e7d">More...</a><br /></td></tr>
-<tr class="separator:ab223228dadd9ecd2e13db7d52dd83e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a722f11a033c8f41f3c65229602cbc12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a722f11a033c8f41f3c65229602cbc12f">decreaseKey</a> (struct <a class="el" href="struct_min_heap.html">MinHeap</a> *minHeap, int v, int key)</td></tr>
-<tr class="separator:a722f11a033c8f41f3c65229602cbc12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a674325ea9101722e2a2bfab254fc34fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a674325ea9101722e2a2bfab254fc34fc">isInMinHeap</a> (struct <a class="el" href="struct_min_heap.html">MinHeap</a> *minHeap, int v)</td></tr>
-<tr class="memdesc:a674325ea9101722e2a2bfab254fc34fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks whether the node is in min heap or not.  <a href="#a674325ea9101722e2a2bfab254fc34fc">More...</a><br /></td></tr>
-<tr class="separator:a674325ea9101722e2a2bfab254fc34fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c18e826244f8d50560fb9708e6acac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a45c18e826244f8d50560fb9708e6acac">printArr</a> (int node[], int weight[], int n)</td></tr>
-<tr class="memdesc:a45c18e826244f8d50560fb9708e6acac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function prints the minimum spanning tree using Prim's algorithm.  <a href="#a45c18e826244f8d50560fb9708e6acac">More...</a><br /></td></tr>
-<tr class="separator:a45c18e826244f8d50560fb9708e6acac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84b53e96421a7af5320828a84b14af4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#ae84b53e96421a7af5320828a84b14af4">PrimMST</a> (struct <a class="el" href="class_graph.html">Graph</a> *graph)</td></tr>
-<tr class="memdesc:ae84b53e96421a7af5320828a84b14af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function performs the prim's algorithm.  <a href="#ae84b53e96421a7af5320828a84b14af4">More...</a><br /></td></tr>
-<tr class="separator:ae84b53e96421a7af5320828a84b14af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aba9eb0e6e30991cd3c5dbbe5b9e805"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_adjacency___list___node.html">Adjacency_List_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a1aba9eb0e6e30991cd3c5dbbe5b9e805">New_Adjacency_List_Node</a> (int destination, float weight)</td></tr>
+<tr class="memdesc:a1aba9eb0e6e30991cd3c5dbbe5b9e805"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function creates the edge between two nodes with its weight.  <a href="#a1aba9eb0e6e30991cd3c5dbbe5b9e805">More...</a><br /></td></tr>
+<tr class="separator:a1aba9eb0e6e30991cd3c5dbbe5b9e805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57abe5e0f9a332da64b835f7fb858923"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="class_graph.html">Graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a57abe5e0f9a332da64b835f7fb858923">Create_New_Graph</a> (int number_of_vertices)</td></tr>
+<tr class="memdesc:a57abe5e0f9a332da64b835f7fb858923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="class_graph.html" title="This is class for Graph. ">Graph</a> object.  <a href="#a57abe5e0f9a332da64b835f7fb858923">More...</a><br /></td></tr>
+<tr class="separator:a57abe5e0f9a332da64b835f7fb858923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49eb052eecdcf598295d08118ebf05c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a49eb052eecdcf598295d08118ebf05c5">Add_New_Edge</a> (struct <a class="el" href="class_graph.html">Graph</a> *graph, int source, int destination, float weight)</td></tr>
+<tr class="memdesc:a49eb052eecdcf598295d08118ebf05c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function adds an edge to the graph.  <a href="#a49eb052eecdcf598295d08118ebf05c5">More...</a><br /></td></tr>
+<tr class="separator:a49eb052eecdcf598295d08118ebf05c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac362b89e3c3fefec5cc81dafd63774e2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#ac362b89e3c3fefec5cc81dafd63774e2">New_Fib_Heap_Node</a> (int v, int key)</td></tr>
+<tr class="memdesc:ac362b89e3c3fefec5cc81dafd63774e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This node creates the new fibonacci heap node.  <a href="#ac362b89e3c3fefec5cc81dafd63774e2">More...</a><br /></td></tr>
+<tr class="separator:ac362b89e3c3fefec5cc81dafd63774e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418972de412d91622ebd9ed4ca4f40fc"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a418972de412d91622ebd9ed4ca4f40fc">Create_Fib_Heap</a> (int capacity)</td></tr>
+<tr class="separator:a418972de412d91622ebd9ed4ca4f40fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4421202767ed61c9675ecb6417eac55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#af4421202767ed61c9675ecb6417eac55">Swap_Fib_Heap_Nodes</a> (struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a> **a, struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a> **b)</td></tr>
+<tr class="memdesc:af4421202767ed61c9675ecb6417eac55"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function swaps the nodes of fibonacci heap.  <a href="#af4421202767ed61c9675ecb6417eac55">More...</a><br /></td></tr>
+<tr class="separator:af4421202767ed61c9675ecb6417eac55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcea203833dccacb4af72146152e8d63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#afcea203833dccacb4af72146152e8d63">Fib_Heapify</a> (struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *<a class="el" href="struct_fib___heap.html">Fib_Heap</a>, int index)</td></tr>
+<tr class="memdesc:afcea203833dccacb4af72146152e8d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions performs the heapify method.  <a href="#afcea203833dccacb4af72146152e8d63">More...</a><br /></td></tr>
+<tr class="separator:afcea203833dccacb4af72146152e8d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8342ab8c5a5f810ded919634e1b40348"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a8342ab8c5a5f810ded919634e1b40348">Is_Empty</a> (struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *<a class="el" href="struct_fib___heap.html">Fib_Heap</a>)</td></tr>
+<tr class="memdesc:a8342ab8c5a5f810ded919634e1b40348"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks whether min heap is empty or not.  <a href="#a8342ab8c5a5f810ded919634e1b40348">More...</a><br /></td></tr>
+<tr class="separator:a8342ab8c5a5f810ded919634e1b40348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dedb8aa3cab672db662f65d30f04cac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a9dedb8aa3cab672db662f65d30f04cac">getFibonacci</a> (int getFib)</td></tr>
+<tr class="memdesc:a9dedb8aa3cab672db662f65d30f04cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Fibonacci object.  <a href="#a9dedb8aa3cab672db662f65d30f04cac">More...</a><br /></td></tr>
+<tr class="separator:a9dedb8aa3cab672db662f65d30f04cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ccf7273dab1b1aa3ac27e6f0b7c11f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#ac5ccf7273dab1b1aa3ac27e6f0b7c11f">Extract_Minimum</a> (struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *<a class="el" href="struct_fib___heap.html">Fib_Heap</a>)</td></tr>
+<tr class="memdesc:ac5ccf7273dab1b1aa3ac27e6f0b7c11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function extracts the minimum from the min heap.  <a href="#ac5ccf7273dab1b1aa3ac27e6f0b7c11f">More...</a><br /></td></tr>
+<tr class="separator:ac5ccf7273dab1b1aa3ac27e6f0b7c11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22fa2a0b7f28bf4c982eea2df9b47153"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a22fa2a0b7f28bf4c982eea2df9b47153">Decrease_Key</a> (struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *<a class="el" href="struct_fib___heap.html">Fib_Heap</a>, int v, float key)</td></tr>
+<tr class="separator:a22fa2a0b7f28bf4c982eea2df9b47153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b35a2656c38237eb40d316b1092188"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a95b35a2656c38237eb40d316b1092188">Is_In_Fib_Heap</a> (struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *<a class="el" href="struct_fib___heap.html">Fib_Heap</a>, int v)</td></tr>
+<tr class="memdesc:a95b35a2656c38237eb40d316b1092188"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks whether the node is in min heap or not.  <a href="#a95b35a2656c38237eb40d316b1092188">More...</a><br /></td></tr>
+<tr class="separator:a95b35a2656c38237eb40d316b1092188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855f15be20733048fe797f1dfa0b950b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a855f15be20733048fe797f1dfa0b950b">minimum</a> (int a, int b)</td></tr>
+<tr class="separator:a855f15be20733048fe797f1dfa0b950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e68b1dd21b69dda6f6603362ae2dfae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a8e68b1dd21b69dda6f6603362ae2dfae">maximum</a> (int a, int b)</td></tr>
+<tr class="separator:a8e68b1dd21b69dda6f6603362ae2dfae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9702ddcf74d009b744599a0568556589"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a9702ddcf74d009b744599a0568556589">Print_An_Array</a> (int array[], float weight[], int size, float sum)</td></tr>
+<tr class="memdesc:a9702ddcf74d009b744599a0568556589"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function prints the minimum spanning tree using Prim's algorithm.  <a href="#a9702ddcf74d009b744599a0568556589">More...</a><br /></td></tr>
+<tr class="separator:a9702ddcf74d009b744599a0568556589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc43e4552a5fa8e0062f60a6b38eb37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#accc43e4552a5fa8e0062f60a6b38eb37">Prim_Minimum_Spanning_Tree</a> (struct <a class="el" href="class_graph.html">Graph</a> *graph)</td></tr>
+<tr class="memdesc:accc43e4552a5fa8e0062f60a6b38eb37"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function performs the prim's algorithm.  <a href="#accc43e4552a5fa8e0062f60a6b38eb37">More...</a><br /></td></tr>
+<tr class="separator:accc43e4552a5fa8e0062f60a6b38eb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function takes input from the file and executes different functions to find the MST Tree using Prim's algorithm.  <a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">More...</a><br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a455e96eb14fbb7f6503933457ff58d4b"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; float, pair&lt; int, int &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prims_8cpp.html#a455e96eb14fbb7f6503933457ff58d4b">arr1</a></td></tr>
+<tr class="separator:a455e96eb14fbb7f6503933457ff58d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This program creates minimum spanning tree using Prim's algorithm using Fibonacci heap data structure. </p>
@@ -174,14 +186,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a135dff8b2b3e390242bf38fadc4e5f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a135dff8b2b3e390242bf38fadc4e5f5d">&#9670;&nbsp;</a></span>addEdge()</h2>
+<a id="a49eb052eecdcf598295d08118ebf05c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49eb052eecdcf598295d08118ebf05c5">&#9670;&nbsp;</a></span>Add_New_Edge()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void addEdge </td>
+          <td class="memname">void Add_New_Edge </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="class_graph.html">Graph</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -190,18 +202,18 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
+          <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
+          <td class="paramname"><em>destination</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>weight</em>&#160;</td>
         </tr>
         <tr>
@@ -223,21 +235,41 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00086">86</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00089">89</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ad9e107bae0a555b824266a0f96b9b62c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9e107bae0a555b824266a0f96b9b62c">&#9670;&nbsp;</a></span>createGraph()</h2>
+<a id="a418972de412d91622ebd9ed4ca4f40fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418972de412d91622ebd9ed4ca4f40fc">&#9670;&nbsp;</a></span>Create_Fib_Heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="class_graph.html">Graph</a>* createGraph </td>
+          <td class="memname">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a>* Create_Fib_Heap </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>V</em></td><td>)</td>
+          <td class="paramname"><em>capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00137">137</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a57abe5e0f9a332da64b835f7fb858923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57abe5e0f9a332da64b835f7fb858923">&#9670;&nbsp;</a></span>Create_New_Graph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="class_graph.html">Graph</a>* Create_New_Graph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number_of_vertices</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -252,41 +284,21 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>struct Graph* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00065">65</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00069">69</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7f3aa36c21fb80494508da24d1256fe0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f3aa36c21fb80494508da24d1256fe0">&#9670;&nbsp;</a></span>createMinHeap()</h2>
+<a id="a22fa2a0b7f28bf4c982eea2df9b47153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fa2a0b7f28bf4c982eea2df9b47153">&#9670;&nbsp;</a></span>Decrease_Key()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_min_heap.html">MinHeap</a>* createMinHeap </td>
+          <td class="memname">void Decrease_Key </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>capacity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00133">133</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a722f11a033c8f41f3c65229602cbc12f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a722f11a033c8f41f3c65229602cbc12f">&#9670;&nbsp;</a></span>decreaseKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void decreaseKey </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap.html">MinHeap</a> *&#160;</td>
-          <td class="paramname"><em>minHeap</em>, </td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *&#160;</td>
+          <td class="paramname"><em>Fib_Heap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -297,7 +309,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>key</em>&#160;</td>
         </tr>
         <tr>
@@ -308,21 +320,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00225">225</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00245">245</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab223228dadd9ecd2e13db7d52dd83e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab223228dadd9ecd2e13db7d52dd83e7d">&#9670;&nbsp;</a></span>extractMin()</h2>
+<a id="ac5ccf7273dab1b1aa3ac27e6f0b7c11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ccf7273dab1b1aa3ac27e6f0b7c11f">&#9670;&nbsp;</a></span>Extract_Minimum()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a>* extractMin </td>
+          <td class="memname">struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a>* Extract_Minimum </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap.html">MinHeap</a> *&#160;</td>
-          <td class="paramname"><em>minHeap</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *&#160;</td>
+          <td class="paramname"><em>Fib_Heap</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -331,27 +343,95 @@ Functions</h2></td></tr>
 <p>This function extracts the minimum from the min heap. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minHeap</td><td></td></tr>
+    <tr><td class="paramname">fibheap</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>struct MinHeapNode* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>struct fibheapNode* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00206">206</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00225">225</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a6e0e9980904fe3f65d9c893356af826d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e0e9980904fe3f65d9c893356af826d">&#9670;&nbsp;</a></span>isEmpty()</h2>
+<a id="afcea203833dccacb4af72146152e8d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcea203833dccacb4af72146152e8d63">&#9670;&nbsp;</a></span>Fib_Heapify()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int isEmpty </td>
+          <td class="memname">void Fib_Heapify </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap.html">MinHeap</a> *&#160;</td>
-          <td class="paramname"><em>minHeap</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *&#160;</td>
+          <td class="paramname"><em>Fib_Heap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This functions performs the heapify method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fibheap</td><td></td></tr>
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00166">166</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9dedb8aa3cab672db662f65d30f04cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dedb8aa3cab672db662f65d30f04cac">&#9670;&nbsp;</a></span>getFibonacci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getFibonacci </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>getFib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Fibonacci object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">getFib</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00208">208</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8342ab8c5a5f810ded919634e1b40348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8342ab8c5a5f810ded919634e1b40348">&#9670;&nbsp;</a></span>Is_Empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Is_Empty </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *&#160;</td>
+          <td class="paramname"><em>Fib_Heap</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -360,27 +440,27 @@ Functions</h2></td></tr>
 <p>This function checks whether min heap is empty or not. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minHeap</td><td></td></tr>
+    <tr><td class="paramname">fibheap</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00195">195</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00197">197</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a674325ea9101722e2a2bfab254fc34fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a674325ea9101722e2a2bfab254fc34fc">&#9670;&nbsp;</a></span>isInMinHeap()</h2>
+<a id="a95b35a2656c38237eb40d316b1092188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b35a2656c38237eb40d316b1092188">&#9670;&nbsp;</a></span>Is_In_Fib_Heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool isInMinHeap </td>
+          <td class="memname">bool Is_In_Fib_Heap </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap.html">MinHeap</a> *&#160;</td>
-          <td class="paramname"><em>minHeap</em>, </td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap.html">Fib_Heap</a> *&#160;</td>
+          <td class="paramname"><em>Fib_Heap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -399,7 +479,7 @@ Functions</h2></td></tr>
 <p>This function checks whether the node is in min heap or not. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minHeap</td><td></td></tr>
+    <tr><td class="paramname">fibheap</td><td></td></tr>
     <tr><td class="paramname">v</td><td></td></tr>
   </table>
   </dd>
@@ -408,7 +488,7 @@ Functions</h2></td></tr>
 <dd>
 false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00249">249</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00269">269</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
@@ -430,27 +510,27 @@ false </dd></dl>
 <p>This function takes input from the file and executes different functions to find the MST Tree using Prim's algorithm. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00347">347</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00389">389</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a6490f3f089082024378334c4559d4fdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6490f3f089082024378334c4559d4fdc">&#9670;&nbsp;</a></span>minHeapify()</h2>
+<a id="a8e68b1dd21b69dda6f6603362ae2dfae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e68b1dd21b69dda6f6603362ae2dfae">&#9670;&nbsp;</a></span>maximum()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void minHeapify </td>
+          <td class="memname">int maximum </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap.html">MinHeap</a> *&#160;</td>
-          <td class="paramname"><em>minHeap</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -460,35 +540,56 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>This functions performs the heapify method. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">minHeap</td><td></td></tr>
-    <tr><td class="paramname">idx</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00162">162</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00284">284</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a079783f492772cffbff344a09d92efb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a079783f492772cffbff344a09d92efb3">&#9670;&nbsp;</a></span>newAdjListNode()</h2>
+<a id="a855f15be20733048fe797f1dfa0b950b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a855f15be20733048fe797f1dfa0b950b">&#9670;&nbsp;</a></span>minimum()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_adj_list_node.html">AdjListNode</a>* newAdjListNode </td>
+          <td class="memname">int minimum </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00278">278</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1aba9eb0e6e30991cd3c5dbbe5b9e805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aba9eb0e6e30991cd3c5dbbe5b9e805">&#9670;&nbsp;</a></span>New_Adjacency_List_Node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_adjacency___list___node.html">Adjacency_List_Node</a>* New_Adjacency_List_Node </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>weight</em>&#160;</td>
         </tr>
         <tr>
@@ -509,18 +610,18 @@ false </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>struct AdjListNode* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00050">50</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00054">54</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aafd9cf72b23058035f33143df99d003b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafd9cf72b23058035f33143df99d003b">&#9670;&nbsp;</a></span>newMinHeapNode()</h2>
+<a id="ac362b89e3c3fefec5cc81dafd63774e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac362b89e3c3fefec5cc81dafd63774e2">&#9670;&nbsp;</a></span>New_Fib_Heap_Node()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a>* newMinHeapNode </td>
+          <td class="memname">struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a>* New_Fib_Heap_Node </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -539,7 +640,7 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>This node creates the new min heap node. </p>
+<p>This node creates the new fibonacci heap node. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td></td></tr>
@@ -547,20 +648,20 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>struct MinHeapNode* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>struct fibheapNode* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00125">125</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00129">129</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ae84b53e96421a7af5320828a84b14af4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae84b53e96421a7af5320828a84b14af4">&#9670;&nbsp;</a></span>PrimMST()</h2>
+<a id="accc43e4552a5fa8e0062f60a6b38eb37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc43e4552a5fa8e0062f60a6b38eb37">&#9670;&nbsp;</a></span>Prim_Minimum_Spanning_Tree()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PrimMST </td>
+          <td class="memname">void Prim_Minimum_Spanning_Tree </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="class_graph.html">Graph</a> *&#160;</td>
           <td class="paramname"><em>graph</em></td><td>)</td>
@@ -577,33 +678,39 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00300">300</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00327">327</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a45c18e826244f8d50560fb9708e6acac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45c18e826244f8d50560fb9708e6acac">&#9670;&nbsp;</a></span>printArr()</h2>
+<a id="a9702ddcf74d009b744599a0568556589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9702ddcf74d009b744599a0568556589">&#9670;&nbsp;</a></span>Print_An_Array()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void printArr </td>
+          <td class="memname">void Print_An_Array </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>node</em>[], </td>
+          <td class="paramname"><em>array</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>weight</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sum</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -623,26 +730,26 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00263">263</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00299">299</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2852f9c7ec9a4cf2e04ba582e8429c0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2852f9c7ec9a4cf2e04ba582e8429c0a">&#9670;&nbsp;</a></span>swapMinHeapNode()</h2>
+<a id="af4421202767ed61c9675ecb6417eac55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4421202767ed61c9675ecb6417eac55">&#9670;&nbsp;</a></span>Swap_Fib_Heap_Nodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void swapMinHeapNode </td>
+          <td class="memname">void Swap_Fib_Heap_Nodes </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a> **&#160;</td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a> **&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="struct_min_heap_node.html">MinHeapNode</a> **&#160;</td>
+          <td class="paramtype">struct <a class="el" href="struct_fib___heap___node.html">Fib_Heap_Node</a> **&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -653,7 +760,7 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>This function swaps the nodes of min heap. </p>
+<p>This function swaps the nodes of fibonacci heap. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td></td></tr>
@@ -662,7 +769,24 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00149">149</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00153">153</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a455e96eb14fbb7f6503933457ff58d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455e96eb14fbb7f6503933457ff58d4b">&#9670;&nbsp;</a></span>arr1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;pair&lt;float,pair&lt;int, int&gt; &gt; &gt; arr1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="prims_8cpp_source.html#l00290">290</a> of file <a class="el" href="prims_8cpp_source.html">prims.cpp</a>.</p>
 
 </div>
 </div>

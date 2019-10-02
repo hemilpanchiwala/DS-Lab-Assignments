@@ -1,8 +1,10 @@
 var annotated_dup =
 [
-    [ "AdjList", "struct_adj_list.html", "struct_adj_list" ],
-    [ "AdjListNode", "struct_adj_list_node.html", "struct_adj_list_node" ],
+    [ "Adjacency_List", "struct_adjacency___list.html", "struct_adjacency___list" ],
+    [ "Adjacency_List_Node", "struct_adjacency___list___node.html", "struct_adjacency___list___node" ],
+    [ "Fib_Heap", "struct_fib___heap.html", "struct_fib___heap" ],
+    [ "Fib_Heap_Node", "struct_fib___heap___node.html", "struct_fib___heap___node" ],
+    [ "FibonacciHeap", "class_fibonacci_heap.html", "class_fibonacci_heap" ],
     [ "Graph", "class_graph.html", "class_graph" ],
-    [ "MinHeap", "struct_min_heap.html", "struct_min_heap" ],
-    [ "MinHeapNode", "struct_min_heap_node.html", "struct_min_heap_node" ]
+    [ "node", "structnode.html", "structnode" ]
 ];

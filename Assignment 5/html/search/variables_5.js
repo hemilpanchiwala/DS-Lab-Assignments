@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next',['next',['../struct_adj_list_node.html#ad07931f1bcb5ab15b9baf380a118242c',1,'AdjListNode']]]
+  ['marked',['marked',['../structnode.html#a6800b687c66c2087c17d541af91184ff',1,'node']]]
 ];

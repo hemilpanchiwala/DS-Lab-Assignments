@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['head',['head',['../struct_adj_list.html#a4f2ab2ed8e90ceae8bf50373e4e97e87',1,'AdjList']]]
+  ['head',['head',['../struct_adjacency___list.html#aa382b1f5aa6dd16fdc5f3f1e332d9422',1,'Adjacency_List']]],
+  ['heap',['heap',['../class_fibonacci_heap.html#a13c58cd79d84a4398fb9fb1c956ccfc5',1,'FibonacciHeap']]]
 ];

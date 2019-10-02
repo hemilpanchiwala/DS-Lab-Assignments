@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weight',['weight',['../struct_adj_list_node.html#ac1c361e92cf8d6da8bae9a0802169643',1,'AdjListNode']]]
+  ['weight',['weight',['../struct_adjacency___list___node.html#a42344f92d147ecd2230b42c27b33bd1c',1,'Adjacency_List_Node']]]
 ];

@@ -110,6 +110,7 @@ void Graph::print() {
     if((fp = fopen("graph1.dot", "w")) != NULL){
         fprintf(fp, "graph G {\n");
 
+        int sum = 0;
 
     for (int i = 0; i < T.size(); i++) {
 
@@ -119,8 +120,11 @@ void Graph::print() {
         fprintf(fp, "\t%c -- %c [label=\"%d\"]\n", start, end, T[i].first);
 
         cout <<start<<" "<<end<<" "<< T[i].first;
+        sum = sum + T[i].first;
         cout << endl;
     }
+
+    cout<<"The total weight of minimum spanning tree is "<<sum<<endl;
 
     fprintf(fp, "}\n");
     fclose(fp);
